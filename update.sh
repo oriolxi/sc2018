@@ -7,6 +7,9 @@ rm -rf pages
 #Clone git hub with new information
 git clone https://github.com/oriolxi/pages
 
+#give execution permission to update.sh
+chmod +x pages/update.sh
+
 #Remove old sc2018 folder
 rm -rf /home/deployer/apps/cau/current/public/sc2018
 
