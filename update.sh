@@ -5,16 +5,16 @@ cd /home/deployer/apps/cau/current/app/views
 rm -rf pages
 
 #Clone git hub with new information
-git clone https://github.com/oriolxi/pages
+git clone https://github.com/oriolxi/sc2018 pages
 
 #give execution permission to update.sh
-chmod +x pages/update.sh
+sudo chmod +x pages/update.sh
 
 #Remove old sc2018 folder
-rm -rf /home/deployer/apps/cau/current/public/sc2018
+rm -rf /home/deployer/apps/cau/current/public/sc2018_files
 
 #Copy new sc2018 directory
-cp -r pages/sc2018 /home/deployer/apps/cau/current/public/sc2018
+cp -r pages/sc2018_files /home/deployer/apps/cau/current/public/sc2018_files
 
 #We finally reboot the system to make changes online
 reboot
