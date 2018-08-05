@@ -2,7 +2,7 @@
 cd /home/deployer/apps/cau/current/app/views
 
 #Remove old pages folder
-rm -rf pages
+sudo rm -rf pages
 
 #Clone git hub with new information
 git clone https://github.com/oriolxi/sc2018 pages
