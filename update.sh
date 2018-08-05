@@ -17,4 +17,4 @@ sudo rm -rf /home/deployer/apps/cau/current/public/sc2018_files
 sudo cp -r pages/sc2018_files /home/deployer/apps/cau/current/public/sc2018_files
 
 #We finally reboot the system to make changes online
-reboot
+sudo reboot
