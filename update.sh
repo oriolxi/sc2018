@@ -11,10 +11,10 @@ git clone https://github.com/oriolxi/sc2018 pages
 sudo chmod +x pages/update.sh
 
 #Remove old sc2018 folder
-rm -rf /home/deployer/apps/cau/current/public/sc2018_files
+sudo rm -rf /home/deployer/apps/cau/current/public/sc2018_files
 
 #Copy new sc2018 directory
-cp -r pages/sc2018_files /home/deployer/apps/cau/current/public/sc2018_files
+sudo cp -r pages/sc2018_files /home/deployer/apps/cau/current/public/sc2018_files
 
 #We finally reboot the system to make changes online
 reboot
