@@ -14,7 +14,9 @@
           var lines = data.split("\n");
           output = [];
       
-          for (var i = 0; i < lines.length - 1; i++)
+          document.getElementById("update_ranking").innerHTML = lines[0];
+      
+          for (var i = 1; i < lines.length - 1; i++)
 	     output.push(
 	     "<tr><td>"
                 + lines[i].split(",").join("</td><td>") +
@@ -29,10 +31,9 @@
           window.addEvent("domready",function(){
           //Creating a new AJAX request that will request 'test.csv' from the current directory
              var csvRequest = new Request({
-                url:"sc2018_files/ranking.csv",
-		method:"GET",
-                onSuccess:function(response){
-                   
+	        url:"sc2018_files/ranking.csv",
+		method:"GET",	      
+                onSuccess:function(response){ 
 	           document.getElementById("ranking-table").innerHTML = parseCSVtoTable(response);
                 }
              }).send(); //Don't forget to send our request!
@@ -44,7 +45,7 @@
   <body>
     <div class="jumbotron text-center">
       <h1>EL CAU DELS POLLASTRES</h1>
-      <p>Guanyarà qui mes s'ho curry!</p> 
+      <p>Gunyarà qui mes s'ho curry!</p> 
     </div>
     
     <div class="container">
@@ -78,7 +79,7 @@
 	    </thead>
 	    <tbody id="ranking-table"> <!--Table from CSV file--> </tbody>
 	  </table>
-	  Última actualització: 22 d'agost a les 11'32h
+	  <b>Última actualització:</b> <i id="update_ranking"></i>
 	</div>
       </div>
     </div>
