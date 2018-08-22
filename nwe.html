@@ -30,6 +30,7 @@
           //Creating a new AJAX request that will request 'test.csv' from the current directory
              var csvRequest = new Request({
                 url:"sc2018_files/ranking.csv",
+		method:"GET",
                 onSuccess:function(response){
                    
 	           document.getElementById("ranking-table").innerHTML = parseCSVtoTable(response);
