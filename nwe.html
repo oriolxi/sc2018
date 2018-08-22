@@ -29,7 +29,7 @@
           window.addEvent("domready",function(){
           //Creating a new AJAX request that will request 'test.csv' from the current directory
              var csvRequest = new Request({
-                url:"sc2018_files/ranking.csv,
+                url:"sc2018_files/ranking.csv",
                 onSuccess:function(response){
                    
 	           document.getElementById("ranking-table").innerHTML = parseCSVtoTable(response);
@@ -43,7 +43,7 @@
   <body>
     <div class="jumbotron text-center">
       <h1>EL CAU DELS POLLASTRES</h1>
-      <p>Gunyarà qui mes s'ho curry!</p> 
+      <p>Guanyarà qui mes s'ho curry!</p> 
     </div>
     
     <div class="container">
