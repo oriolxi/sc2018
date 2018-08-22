@@ -29,7 +29,7 @@
           window.addEvent("domready",function(){
           //Creating a new AJAX request that will request 'test.csv' from the current directory
              var csvRequest = new Request({
-                url:"sc2018_files/ranking.csv, method:"GET",
+                url:"sc2018_files/ranking.csv,
                 onSuccess:function(response){
                    
 	           document.getElementById("ranking-table").innerHTML = parseCSVtoTable(response);
