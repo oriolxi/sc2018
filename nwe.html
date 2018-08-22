@@ -7,25 +7,61 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core.min.js"></script>
+    <script type="text/javascript">
+      function parseCSVtoTable(data) {
+          var lines = data.split("\n");
+          output = [];
+      
+          for (var i = 0; i < lines.length - 1; i++)
+	     output.push(
+	     "<tr><td>"
+                + lines[i].split(",").join("</td><td>") +
+	     "</td></tr>");
+
+	  output.push("<tr><td></td><td></td><td></td></tr>")
+          return output.join("");
+	}
+
+      
+          //This event is called when the DOM is fully loaded
+          window.addEvent("domready",function(){
+          //Creating a new AJAX request that will request 'test.csv' from the current directory
+             var csvRequest = new Request({
+                url:"sc2018_files/ranking.csv",
+                onSuccess:function(response){
+                   
+	           document.getElementById("ranking-table").innerHTML = parseCSVtoTable(response);
+                }
+             }).send(); //Don't forget to send our request!
+          });
+        </script>
+
   </head>
 
   <body>
     <div class="jumbotron text-center">
-      <h1>My First Bootstrap Page</h1>
-      <p>Resize this responsive page to see the effect!</p> 
+      <h1>EL CAU DELS POLLASTRES</h1>
+      <p>Gunyarà qui mes s'ho curry!</p> 
     </div>
     
     <div class="container">
       <div class="row">
 	<div class="col-sm-6">
-	  <h3>Column 1</h3>
-	  <p> <a href="https://chat.whatsapp.com/2QARyWQBTE6L3lCSB228Dt"> GRUP WHATSAPP </a> Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-	  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+	  <h3>Explicació</h3>
+	  <p>Com tothom sap, per Festa Major és quan es solen coure els pollastres més grans de l’any. Ja posats, doncs, hem decidit afegir-hi una mica de curry a l’assumpte!</p>
+	  <p>Si heu pogut entrar a aquesta pàgina web, és perquè us heu trobat algun cap o aquel·la de l’Agrupament Escolta i Guia Cardenal Lluch amb la samarreta d’aquest curs.</p>
+	  <p>Us convidem a acompanyar-nos en aquest joc que hem preparat per fer encara més emocionant i èpica la Festa Major: cada nit actualitzarem aquesta pàgina amb una nova prova que podreu intentar superar per anar guanyant punts, i la última nit de Festa Major anunciarem quin serà el premi per les guanyadores del concurs!</p>
+	  <p>Si vols participar, ves enviant els resultats de les proves per aquest  <a href="https://chat.whatsapp.com/2QARyWQBTE6L3lCSB228Dt"> GRUP de WHATSAPP </a> (primer de tot, presenta’t amb un pseudònim!) i nosaltres anirem actualitzant la taula de puntuacions dia a dia.</p>
+	  <p>Dit això, esperem que us animeu a participar amb esportivitat, respecte i, al final, amb ganes de passar-ho bé! I recordeu:</p>
+	  <p>Guanyarà qui més s’ho curry!</p>
 	</div>
 	<div class="col-sm-6">
-	  <h3>Column 2</h3>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-	  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+	  <h3>Prova de la nit (Dimecres 22)</h3>
+	  <p>Afegeix-te al grup de WhatsApp del cau dels pollastres, presenta’t i dona un final original a la frase:</p>
+	  <p>Per Festa Major a mi m’agrada…</p>
+	  <p>Es premiarà la participació i la originalitat! Animeu-vos ;)</p>
 	</div>
       </div>
       <div class="row">
@@ -34,29 +70,14 @@
 	  <table class="table">
 	    <thead>
 	      <tr>
-		<th>Firstname</th>
-		<th>Lastname</th>
-		<th>Email</th>
+		<th>Posició</th>
+		<th>Pseudonim</th>
+		<th>Punts</th>
 	      </tr>
 	    </thead>
-	    <tbody>
-	      <tr>
-		<td>John</td>
-		<td>Doe</td>
-		<td>john@example.com</td>
-	      </tr>
-	      <tr>
-		<td>Mary</td>
-		<td>Moe</td>
-		<td>mary@example.com</td>
-	      </tr>
-	      <tr>
-		<td>July</td>
-		<td>Dooley</td>
-		<td>july@example.com</td>
-	      </tr>
-	    </tbody>
-	  </table>	
+	    <tbody id="ranking-table"> <!--Table from CSV file--> </tbody>
+	  </table>
+	  Última actualització: 22 d'agost a les 11'32h
 	</div>
       </div>
     </div>
