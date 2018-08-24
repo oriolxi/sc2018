@@ -18,9 +18,10 @@
           document.getElementById("update_ranking").innerHTML = lines[0];
       
           for (var i = 1; i < lines.length - 1; i++)
+	     elements = lines[i].split(",");		      
 	     output.push(
 	     "<tr><td>"
-                + lines[i].split(",").join("</td><td>") +
+                + elements.slice(1,elements.length).join("</td><td>") +
 	     "</td></tr>");
 	  output.push("<tr><td></td><td></td><td></td></tr>")
           return output.join("");
@@ -62,12 +63,12 @@
 	<div class="col-sm-6">
 	  <div class="panel panel-default">
 	    <div class="panel-body">
-	      <h3 style="text-align:center;font-weight:999;">Prova de la nit (Dimecres 22)</h3>
-	      <p class="card-text">Afegeix-te al <a href="https://chat.whatsapp.com/2QARyWQBTE6L3lCSB228Dt"> grup de WhatsApp </a> del cau dels pollastres, presenta’t amb un "pseudonim" i dona un final original a la frase:</p>
-	      <p class="card-text" style="text-align: center;"><i>Per Festa Major a mi m’agrada…</i></p>
-	      <p class="card-text">Es premiarà la participació i la originalitat amb <b> 100 punts </b>! Animeu-vos ;)</p>
+	      <h3 style="text-align:center;font-weight:999;">Prova de la nit (Dijous 23)</h3>
+	      <p class="card-text">Afegeix-te al <a href="https://chat.whatsapp.com/2QARyWQBTE6L3lCSB228Dt"> grup de WhatsApp </a> del cau dels pollastres, presenta’t amb un pseudònim i <span style="text-decoration:underline">envia com més fotos millor on surtis tu amb alguna cap del Cardenal Lluch</span> amb la samarreta de la palmera! No es val repetir amb la mateixa cap! </p>
+	      <!--p class="card-text" style="text-align: center;"><i>Per Festa Major a mi m’agrada…</i></p>
+	      <p class="card-text">Es premiarà la participació i la originalitat amb <b> 100 punts </b>! Animeu-vos ;)</p-->
 	    </div>
-		</div>
+	  </div>
 	<div class="col-sm-6">
 	  <h3 style="font-weight:999;">Explicació</h3>
 	  <p>Com tothom sap, per Festa Major és quan es solen coure els pollastres més grans de l’any. Ja posats, doncs, hem decidit afegir-hi una mica de curry a l’assumpte!</p>

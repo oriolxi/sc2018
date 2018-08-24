@@ -13,15 +13,19 @@
     <script type="text/javascript">
       function parseCSVtoTable(data) {
           var lines = data.split("\n");
-          output = [];
+      output = [];
+      elements = [];
       
-          document.getElementById("update_ranking").innerHTML = lines[0];
+          document.getElementById("update_ranking").innerHTML = lines[0].split(",")[0];
       
-          for (var i = 1; i < lines.length - 1; i++)
+      for (var i = 1; i < lines.length - 1; i++) {
+			  elements = lines[i].split(",");
+			  elements.shift();
 	     output.push(
 	     "<tr><td>"
-                + lines[i].split(",").join("</td><td>") +
-	     "</td></tr>");
+                + elements.join("</td><td>") +
+			  "</td></tr>");
+			  }
 	  output.push("<tr><td></td><td></td><td></td></tr>")
           return output.join("");
 	}
